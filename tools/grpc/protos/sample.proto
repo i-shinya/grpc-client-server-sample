@@ -1,4 +1,6 @@
 syntax = "proto3";
+option go_package = "adapter/gen_grpc";
+package gen_grpc;
 
 service SampleAdapter {
   rpc GetMySample (Sample.GetMySampleMessage) returns (Sample.MySampleResponse) {}
