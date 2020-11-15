@@ -1,5 +1,6 @@
-# go-grpc-sample
+# grpc-client-server-sample
 golangでgrpcサンプルを実装するリポジトリ
+クライアントとサーバの実装サンプルを実装していく予定です。
 
 --- 
 
