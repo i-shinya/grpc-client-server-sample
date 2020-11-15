@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+service SampleAdapter {
+  rpc GetMySample (Sample.GetMySampleMessage) returns (Sample.MySampleResponse) {}
+}
+
+message Sample {
+  message GetMySampleMessage {
+    string target_Sample = 1;
+  }
+
+  message MySampleResponse {
+      string name = 1;
+      string kind = 2;
+  }
+}
