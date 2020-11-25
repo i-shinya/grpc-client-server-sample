@@ -35,23 +35,49 @@ go run cmd/grpc_main.go
 
 # tools
 
-## install proto buffers
+## proto buffers
+
+### install proto buffers
 
 以下 URL より proto buffers をダウンロードして grpc-client-server-sample/tools/grpc 配下にリネームして配置してください。
 https://github.com/protocolbuffers/protobuf/releases
 
-## protoc-gen-go install
+### protoc-gen-go install
 
 以下コマンドで protoc-gen-go をインストールし、バイナリを path へ設定してください。
 
 ```
-go install github.com/golang/protobuf/protoc-gen-go
+go get github.com/golang/protobuf/protoc-gen-go
 ```
 
-## generate proto file
+### generate proto file
 
 ```
 cd grpc-client-server-sample/tools/grpc
 
 protoc/bin/protoc --go_out=plugins=grpc:../../go-server/internal/apps/ protos/*.proto
+```
+
+## sql-migrate
+
+### install sql-migrate
+
+```
+go get -v github.com/rubenv/sql-migrate/...
+```
+
+### do db migrate
+
+```
+cd grpc-client-server-sample/tools/db/migrate
+
+sql-migrate up
+```
+
+### undo db migrate
+
+```
+cd grpc-client-server-sample/tools/db/migrate
+
+sql-migrate down
 ```
